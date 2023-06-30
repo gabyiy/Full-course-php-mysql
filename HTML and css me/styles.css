@@ -1,0 +1,67 @@
+/* asa creem variable de css customs */
+/*color: var(--blanco);   asa accesam variabile create in css  */
+:root{
+    --blanco:#ffffff;
+    --obscuro:#212121;
+    --primario :#ffc017;
+    --secundario:#0097a7;
+    --gris:#757575;
+}
+
+
+
+/* setam ca default proprietatile pagini si al body pentru a putea utiliza rem 1rem=10px */
+
+html{
+    font-size: 62.5%;
+    
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+
+}
+
+.titulo{
+    text-align: center;
+   font-size: 3.8rem;    /*1rem=10px */
+}
+
+
+/* pentru ca aici am especificat mai complet, se va aplica culuare la span  ,si nu cuoare de la titulo span
+h1.titulo span{
+
+    font-size: 2rem;
+    color: red;
+} */
+
+/* asa aplicam proprietatea doar la un span care este fiu de clasa titulo */
+.titulo span{
+font-size: 2rem;
+}
+
+/* nav css */
+
+
+/* facem clasa container pentru a centra tot ce avem in interior */
+.contenedor{
+    width: 120rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+
+}
+.navegacion-principal{
+    padding: 1rem;
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+}

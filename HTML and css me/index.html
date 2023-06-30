@@ -3,22 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- utilizam normalize pentru a face ca paginanoastra sa se veda lafel in toate browserele -->
+<link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- folosim preload pentru a incarca css mai rapid -->
+    <link rel="preload" href="styles.css" as="style" >
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
   </head>
   <body>
     <header>
-      <h1>Nita Gabriel</h1>
+      <h1 class="titulo">Nita Gabriel <span>Freelance</span></h1>
     </header>
-    <nav>
+    <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
         <a href="">Inicio</a>
         <a href="">Sobre mi</a>
         <a href="">Clientes</a>
         <a href="">Contacto</a>
 
     </nav>
+  </div>
     <section>
-      <h2>Web developer</h2>
+      <h2 class="titulo">Web developer <span> Freelance</span></h2>
       
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
