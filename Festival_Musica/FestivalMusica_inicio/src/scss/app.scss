@@ -1,0 +1,12 @@
+// creem scriptu de sass, dupa specificam unde se afla si dupa spunem unde vrem sa creeze nou folder in build
+//iar dupa cu  npm run sass initiem scriptu, iar cu watch spunem sa faca refresh mereu cand facem vro schimbasre
+
+// //aici importam toate stilurile pe care le vom folosi cum se facea
+// @import "base/variables";
+// @import "base/variables";
+
+// mai nou se face asa
+
+@use 'base';
+@use 'contenido';
+@use "layout";
