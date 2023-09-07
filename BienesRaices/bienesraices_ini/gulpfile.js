@@ -24,24 +24,34 @@ const postcss = require("gulp-postcss")
 const sourcemaps =require("gulp-sourcemaps")
 
 
-
+const paths = {
+  scss: 'src/scss/**/*.scss',
+  js: 'src/js/**/*.js',
+  imagenes: 'src/img/**/*'
+}
 
 //asta este o functie care avizeaza a gulp
 function css(done) {
   //identificam toate arhivele sass cu **
-  src('src/scss/**/*.scss')
-  .pipe(sourcemaps.init())//asta nu trebuie neaparat
-    .pipe(plumber())
-    .pipe(postcss[autoprefixer(),cssnano()])//nici asta  nu trebuie neaparat
-    .pipe(sass()) //compilam
-    .pipe(sourcemaps.write("."))//nici asta nu trebuie
-    .pipe(dest('build/css')); //salvam in hard disk
+  return src(paths.scss)
 
-  //iar dua cu pipe executa continutul
+  .pipe(sass())
+  .pipe(postcss([autoprefixer(), cssnano()]))
+  // .pipe(postcss([autoprefixer()]))
+  .pipe(sourcemaps.write('.'))
+  .pipe(dest('build/css'));
   done();
 }
-
-//cu fuctiaasta transforma imaginile in format avif
+// function css() {
+//   return src(paths.scss)
+//       .pipe(sourcemaps.init())
+//       .pipe(sass())
+//       .pipe(postcss([autoprefixer(), cssnano()]))
+//       // .pipe(postcss([autoprefixer()]))
+//       .pipe(sourcemaps.write('.'))
+//       .pipe(dest('build/css'));
+// }
+// //cu fuctiaasta transforma imaginile in format avif
 
 function versionAvif (done){
     const opcionenes = {
@@ -85,11 +95,22 @@ src("src/js/**/*.js")
 .pipe(dest("build/js"))
   done()
 }
+// function javascript() {
+//   return src(paths.js)
+//     .pipe(sourcemaps.init())
+//     .pipe(concat('bundle.js')) // final output file name
+//     .pipe(terser())
+//     .pipe(sourcemaps.write('.'))
+//     .pipe(rename({ suffix: '.min' }))
+//     .pipe(dest('./build/js'))
+// }
+
 
 function dev(done) {
   //aici punem l wacth fisierus css sa se refresuiasca automat
   watch('src/scss/**/*.scss', css);
-  watch("src/js/**/*.js",javascript);
+  // watch("src/js/**/*.js",javascript);    watch( paths.scss, css );
+  // watch( paths.js, javascript );
   done();
 }
 
