@@ -5,3 +5,12 @@
 .contenido-centrado {
     max-width: 800px;
 }
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alinear-centro{
+    display: flex;
+    justify-content: center;
+}
