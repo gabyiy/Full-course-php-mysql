@@ -1,0 +1,17 @@
+//folosim block ca butonu sa ocupe tot spatiu 
+
+.boton-amarillo-block{
+    @include boton($amarillo,block);
+
+    
+}
+// iar cu inline ocupa doar cat are nevoie
+.boton-amarillo{
+    @include boton($amarillo,inline-block);
+
+    
+}
+.boton-verde {
+    @include boton ($verde, inline-block);
+
+}
