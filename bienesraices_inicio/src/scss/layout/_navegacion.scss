@@ -1,17 +1,57 @@
+.derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet{
+        //asa trimitem luna in dreapta
+        align-items: flex-end;
+    }
+}
+
+.dark-mode-boton{
+    width: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    //asa ii schimbam culoarea iconului
+    filter: invert(100%);
+
+    &:hover{
+        cursor: pointer;
+    }
+    @include tablet{
+        margin-top:0;
+    }
+}
 .barra{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding-top: 3rem;
     @include tablet {
+        align-items: flex-end;
+
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
 .navegacion{
+height: 0;
+
+    //folosim hiden ca sa nu ne apara navigatia cand este in format mobil,si sa ne apara doar can face push pe haburgesa
+visibility: hidden;
+
+//iar cu transition facem ca scrisu sa intarzie un pic pana apare complet
+opacity: 0;
+transition: visibility .3s ease-in-out, opacity .5s  linear, height .5s linear ;
+
     @include tablet{
 display: flex;
 align-items: center;
+opacity: 1;
+visibility: visible;
+
     }
     a{
     color: $blanco;
@@ -19,6 +59,9 @@ align-items: center;
     font-size: 2.2rem;
     display: block;
     text-align: center;
+    &:hover{
+        color: $verde;
+    }
     @include tablet{
         font-size: 1.8rem;
         margin-right: 2rem;
@@ -27,4 +70,26 @@ align-items: center;
         }
     }
     }
+}
+
+
+/**Menu de haburguesa **/
+
+.mobile-menu{
+
+    @include tablet{
+        display: none;
+
+    }
+    img{
+        width: 5rem;
+    }
+}
+
+
+.mostrar {
+   visibility: visible;
+   opacity: 1;
+   height: auto;
+    
 }

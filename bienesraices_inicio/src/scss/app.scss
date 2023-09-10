@@ -4,6 +4,7 @@
 @import 'base/globales';
 @import 'base/utilidades';
 @import "base/botones.scss";
+@import "base/darkMode";
 
 // *****UI***
 
@@ -12,4 +13,12 @@
 @import "layout/footer";
 @import "layout/iconos";
 @import "layout/anuncios.scss";
-@import "layout/_contactar.scss"
+@import "layout/_contactar";
+@import "layout/inferior";
+@import "layout/testimoniales";
+@import "layout/formulario";
+
+/** Paginas internas **/
+
+@import "internas/nostros.scss";
+@import "internas/anuncio";
